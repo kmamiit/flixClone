@@ -49,6 +49,19 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
             // This will run when a network request returns
             if let error = error {
                 print(error.localizedDescription)
+                
+                let alertController = UIAlertController(title: "Can't Load Movies", message: "Please make sure you are connected to the internet", preferredStyle: .alert)
+                
+                let OKAction = UIAlertAction(title: "OK", style: .default, handler: { (alert: UIAlertAction!) in
+                    print("Alert Initiated")
+                })
+                
+                alertController.addAction(OKAction)
+                
+                DispatchQueue.main.async {
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 let movies = dataDictionary["results"] as! [[String: Any]]
@@ -57,7 +70,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
                 self.refreshControl.endRefreshing()
             }
         }
-        
+        //activityIndicator.stopAnimating()
         task.resume()
         activityIndicator.stopAnimating()
     }
