@@ -97,6 +97,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         let posterURL = URL(string: baseURLString + posterPathString )!
         cell.posterImageView.af_setImage(withURL: posterURL)
         
+        cell.selectionStyle = .none
+        //Did this to customized the cell selection effect; thought this was reasonable because selecting a cell doesn't do anything yet
         
         return cell
     }
