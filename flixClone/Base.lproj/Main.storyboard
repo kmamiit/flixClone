@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G22010" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G22010" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vg2-ca-rvV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Now Playing View Controller-->
+        <!--Movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NowPlayingViewController" customModule="flixClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,6 +58,7 @@
                                             <outlet property="overviewLabel" destination="fD2-5D-IMM" id="z25-yP-pVE"/>
                                             <outlet property="posterImageView" destination="lsa-46-E3z" id="AVf-qm-YNT"/>
                                             <outlet property="titleLabel" destination="Bdm-8b-PQf" id="4ZT-7B-1XX"/>
+                                            <segue destination="LK1-Iq-5lq" kind="show" id="aZ3-6p-tJe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -70,12 +71,91 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Movies" id="9oO-7U-0Ju"/>
                     <connections>
                         <outlet property="activityIndicator" destination="XPe-Rx-0Bt" id="YDd-ZG-mgL"/>
                         <outlet property="tableView" destination="d7t-GY-oZw" id="lvb-5z-EpT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="105.69715142428787"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="jgB-DR-XVs">
+            <objects>
+                <viewController id="LK1-Iq-5lq" customClass="DetailViewController" customModule="flixClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CaY-9F-VsT"/>
+                        <viewControllerLayoutGuide type="bottom" id="wad-gl-fRd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2vv-2e-Esk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4NA-z5-OGF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CgD-z2-Ix3">
+                                <rect key="frame" x="24" y="245" width="109" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wonder Woman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kly-e3-Wy6">
+                                <rect key="frame" x="141" y="342" width="218" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud2-sy-0nW">
+                                <rect key="frame" x="24" y="430" width="335" height="229"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Y1-qd-GMe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0Q-qm-Vm3">
+                                <rect key="frame" x="141" y="371" width="218" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backDropImageView" destination="3Y1-qd-GMe" id="NqD-w7-Vtj"/>
+                        <outlet property="overviewLabel" destination="ud2-sy-0nW" id="yNa-sc-3hI"/>
+                        <outlet property="posterImageView" destination="CgD-z2-Ix3" id="Qse-Rx-QKm"/>
+                        <outlet property="releaseDateLabel" destination="I0Q-qm-Vm3" id="NJh-ju-Z4S"/>
+                        <outlet property="titleLabel" destination="Kly-e3-Wy6" id="PvL-sV-Riw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kL2-Rh-xon" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="105.69715142428787"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sbp-WT-A4T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vg2-ca-rvV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OQO-Sl-pkT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Pub-hT-ITC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VsM-5F-tUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="112.8" y="105.69715142428787"/>
         </scene>
