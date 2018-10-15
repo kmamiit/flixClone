@@ -174,7 +174,7 @@
             </objects>
             <point key="canvasLocation" x="112.8" y="105.69715142428787"/>
         </scene>
-        <!--Superhero View Controller-->
+        <!--Superhero-->
         <scene sceneID="4Gc-YX-6wu">
             <objects>
                 <viewController id="HIq-fc-6rb" customClass="SuperheroViewController" customModule="flixClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -212,6 +212,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterImageView" destination="Cjy-jT-YE9" id="BVw-AU-hgT"/>
+                                            <segue destination="LK1-Iq-5lq" kind="show" id="Kad-dH-fU5"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -219,7 +220,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="M5o-dT-Ref"/>
+                    <navigationItem key="navigationItem" title="Superhero" id="M5o-dT-Ref"/>
                     <connections>
                         <outlet property="collectionView" destination="YhF-vc-vdL" id="Ggj-UK-Rkd"/>
                     </connections>
@@ -252,4 +253,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aZ3-6p-tJe"/>
+    </inferredMetricsTieBreakers>
 </document>
